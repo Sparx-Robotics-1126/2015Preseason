@@ -25,44 +25,46 @@ public class RobotTemplate extends IterativeRobot {
 	private Talon backLeftT5;
 	private Talon rightLeftT6;
 	/**
-     * This function is run when the robot is first started up and should be
-     * used for any initialization code.
-     */
-    public void robotInit() {
-    	frontRightT1 = new talon(1);
-    	backRightT2 = new talon(1);
-    	rearRightT3 = new talon(1);
-    	frontLeftT4 = new talon(1);
-    	backLeftT5 = new talon(1);
-    	rearLeftT6 = new talon(1);
-    	
-    }
+	 * This function is run when the robot is first started up and should be
+	 * used for any initialization code.
+	 */
+	public void robotInit() {
+		frontRightT1 = new talon(7);
+		backRightT2 = new talon(9);
+		rearRightT3 = new talon(8);
+		frontLeftT4 = new talon(5);
+		backLeftT5 = new talon(10);
+		rearLeftT6 = new talon(6);
 
-    /**
-     * This function is called periodically during autonomous
-     */
-    public void autonomousPeriodic() {
-    	frontRightT1.set(-0.01);
-    	backRightT2.set(0.01);
-    	rearRightT3.set(-0.01);
-    	frontLeftT4.set(0.01);
-    	backLeftT5.set(-0.01);
-    	frontLeftT6.set(0.01);
-    	
-    }
+	}
 
-    /**
-     * This function is called periodically during operator control
-     */
-    public void teleopPeriodic() {
-        
-    }
-    
-    /**
-     * This function is called periodically during test mode
-     */
-    public void testPeriodic() {
-    
-    }
-    
-}
+	/**
+	 * This function is called periodically during autonomous
+	 */
+	public void autonomousPeriodic() {
+		while(true(){
+			frontRightT1.set(-0.01);
+			backRightT2.set(0.01);
+			rearRightT3.set(-0.01);
+			frontLeftT4.set(0.01);
+			backLeftT5.set(-0.01);
+			frontLeftT6.set(0.01);
+			}
+
+		}
+
+		/**
+		 * This function is called periodically during operator control
+		 */
+		public void teleopPeriodic() {
+
+		}
+
+		/**
+		 * This function is called periodically during test mode
+		 */
+		public void testPeriodic() {
+
+		}
+
+	}
