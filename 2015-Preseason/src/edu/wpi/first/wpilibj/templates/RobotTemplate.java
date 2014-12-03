@@ -18,19 +18,35 @@ import edu.wpi.first.wpilibj.IterativeRobot;
  * directory.
  */
 public class RobotTemplate extends IterativeRobot {
+	private Talon t1r;
+	private Talon t2r;
+	private Talon t3r;
+	private Talon t1l;
+	private Talon t2l;
+	private Talon t3l;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
-
+		t1r = new Talon(1);
+		t2r = new Talon(1);
+		t3r = new Talon(1);
+		t1l = new Talon(1);
+		t2l = new Talon(1);
+		t3l = new Talon(1);
     }
 
     /**
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-
+    	t1r.set(-0.1);
+    	t2r.set(0.1);
+    	t3r.set(-0.1);
+    	t1l.set(0.1);
+    	t2l.set(-0.1);
+    	t3l.set(0.1);
     }
 
     /**
