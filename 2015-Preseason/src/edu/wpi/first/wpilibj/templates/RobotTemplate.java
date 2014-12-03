@@ -29,12 +29,12 @@ public class RobotTemplate extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-		t1r = new Talon(1);
-		t2r = new Talon(1);
-		t3r = new Talon(1);
-		t1l = new Talon(1);
-		t2l = new Talon(1);
-		t3l = new Talon(1);
+		t1r = new Talon(7);
+		t2r = new Talon(9);
+		t3r = new Talon(8);
+		t1l = new Talon(4);
+		t2l = new Talon(10);
+		t3l = new Talon(5);
     }
 
     /**
