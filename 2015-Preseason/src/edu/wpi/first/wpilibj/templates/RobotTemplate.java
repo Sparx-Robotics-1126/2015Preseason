@@ -32,9 +32,9 @@ public class RobotTemplate extends IterativeRobot {
 		frontRightT1 = new talon(7);
 		backRightT2 = new talon(9);
 		rearRightT3 = new talon(8);
-		frontLeftT4 = new talon(5);
+		frontLeftT4 = new talon(4);
 		backLeftT5 = new talon(10);
-		rearLeftT6 = new talon(6);
+		rearLeftT6 = new talon(5);
 
 	}
 
