@@ -32,9 +32,9 @@ public class RobotTemplate extends IterativeRobot {
 		FrightT1 = new Talon(7);
 		BrightT2 = new Talon(9);
 		RrightT3 = new Talon(8);
-		FleftT4 = new Talon(5);
+		FleftT4 = new Talon(4);
 		BleftT5 = new Talon(10);
-		RleftT6 = new Talon(6);
+		RleftT6 = new Talon(5);
 	}
 
 	/**
