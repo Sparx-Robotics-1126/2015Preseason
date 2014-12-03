@@ -24,43 +24,45 @@ public class RobotTemplate extends IterativeRobot {
 	private Talon FleftT4;
 	private Talon BleftT5;
 	private Talon RleftT6;
-    /**
-     * This function is run when the robot is first started up and should be
-     * used for any initialization code.
-     */
-    public void robotInit() {
-    	FrightT1 = new Talon(1);
-    	BrightT2 = new Talon(1);
-    	RrightT3 = new Talon(1);
-    	FleftT4 = new Talon(1);
-    	BleftT5 = new Talon(1);
-    	RleftT6 = new Talon(1);
-    }
+	/**
+	 * This function is run when the robot is first started up and should be
+	 * used for any initialization code.
+	 */
+	public void robotInit() {
+		FrightT1 = new Talon(7);
+		BrightT2 = new Talon(9);
+		RrightT3 = new Talon(8);
+		FleftT4 = new Talon(5);
+		BleftT5 = new Talon(10);
+		RleftT6 = new Talon(6);
+	}
 
-    /**
-     * This function is called periodically during autonomous
-     */
-    public void autonomousPeriodic() {
-    	FrightT1.set(-0.01);
-    	BrightT2.set(0.01);
-    	RrightT3.set(-0.01);
-    	FleftT4.set(0.01);
-    	BleftT5.set(-0.01);
-    	RleftT6.set(0.01);
-    }
+	/**
+	 * This function is called periodically during autonomous
+	 */
+	public void autonomousPeriodic() {
+		while(true){
+			FrightT1.set(-0.01);
+			BrightT2.set(0.01);
+			RrightT3.set(-0.01);
+			FleftT4.set(0.01);
+			BleftT5.set(-0.01);
+			RleftT6.set(0.01);
+		}
+	}
 
-    /**
-     * This function is called periodically during operator control
-     */
-    public void teleopPeriodic() {
-        
-    }
-    
-    /**
-     * This function is called periodically during test mode
-     */
-    public void testPeriodic() {
-    
-    }
-    
+	/**
+	 * This function is called periodically during operator control
+	 */
+	public void teleopPeriodic() {
+
+	}
+
+	/**
+	 * This function is called periodically during test mode
+	 */
+	public void testPeriodic() {
+
+	}
+
 }
