@@ -43,21 +43,28 @@ public class RobotTemplate extends IterativeRobot {
 	 * This function is called periodically during autonomous
 	 */
 	public void autonomousPeriodic() {
-		while(true){
-			FrightT1.set(-joystick.getRawAxis(3));
-			BrightT2.set(joystick.getRawAxis(3));
-			RrightT3.set(-joystick.getRawAxis(3));
-			FleftT4.set(joystick.getRawAxis(2));
-			BleftT5.set(-joystick.getRawAxis(2));
-			RleftT6.set(joystick.getRawAxis(2));
-		}
+//		while(true){
+//			FrightT1.set(-joystick.getRawAxis(3));
+//			BrightT2.set(joystick.getRawAxis(3));
+//			RrightT3.set(-joystick.getRawAxis(3));
+//			FleftT4.set(joystick.getRawAxis(2));
+//			BleftT5.set(-joystick.getRawAxis(2));
+//			RleftT6.set(joystick.getRawAxis(2));
+//		}
 	}
 
 	/**
 	 * This function is called periodically during operator control
 	 */
 	public void teleopPeriodic() {
-
+		while(true){
+			FrightT1.set(joystick.getRawAxis(3));
+			BrightT2.set(-joystick.getRawAxis(3));
+			RrightT3.set(joystick.getRawAxis(3));
+			FleftT4.set(-joystick.getRawAxis(2));
+			BleftT5.set(joystick.getRawAxis(2));
+			RleftT6.set(-joystick.getRawAxis(2));
+		
 	}
 
 	/**
