@@ -48,14 +48,14 @@ public class RobotTemplate extends IterativeRobot {
 	 * This function is called periodically during autonomous
 	 */
 	public void autonomousPeriodic() {
-		while(true(){
+		/**while(true(){
 			frontRightT1.set(joystick.getRawAxis(3));
 			backRightT2.set(-joystick.getRawAxis(3));
 			rearRightT3.set(joystick.getRawAxis(3));
 			frontLeftT4.set(-joystick.getRawAxis(2));
 			backLeftT5.set(joystick.getRawAxis(2));
 			frontLeftT6.set(-joystick.getRawAxis(2));
-		
+			*/
 			}
 
 		}
@@ -64,15 +64,26 @@ public class RobotTemplate extends IterativeRobot {
 		 * This function is called periodically during operator control
 		 */
 		public void teleopPeriodic() {
+			boolean value = false
+			boolean check = false;
 			comress.start();
 		while(true(){
+			if(joystick.getRawButton(1) == true && check == false){
+				value = !value;
+				sol.set(check);
+				check = true;
+			}
+			else if(check == true && joystick.getRawButton(1) == false)
+			{
+				check = false
+			}
 			frontRightT1.set(joystick.getRawAxis(3));
 			backRightT2.set(-joystick.getRawAxis(3));
 			rearRightT3.set(joystick.getRawAxis(3));
 			frontLeftT4.set(-joystick.getRawAxis(2));
 			backLeftT5.set(joystick.getRawAxis(2));
 			frontLeftT6.set(-joystick.getRawAxis(2));
-			sol.set(joystick.getRawButton(1));
+			
 			}
 		}
 
