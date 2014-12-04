@@ -26,6 +26,7 @@ public class RobotTemplate extends IterativeRobot {
 	private Talon rightLeftT6;
 	private Joystick joystick;
 	private Compressor compress;
+	private Solenoid sol;
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -39,6 +40,7 @@ public class RobotTemplate extends IterativeRobot {
 		rearLeftT6 = new Talon(5);
 		joystick = new Joystick(1);
 		compress = new Compressor(1,14,1,1);
+		sol = new Solenoid(1);
 
 	}
 
@@ -70,6 +72,7 @@ public class RobotTemplate extends IterativeRobot {
 			frontLeftT4.set(-joystick.getRawAxis(2));
 			backLeftT5.set(joystick.getRawAxis(2));
 			frontLeftT6.set(-joystick.getRawAxis(2));
+			sol.set(joystick.getRawButton(1));
 			}
 		}
 
