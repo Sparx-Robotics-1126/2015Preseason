@@ -24,17 +24,19 @@ public class RobotTemplate extends IterativeRobot {
 	private Talon frontLeftT4;
 	private Talon backLeftT5;
 	private Talon rightLeftT6;
+	private Joystick joystick
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
 	 */
 	public void robotInit() {
-		frontRightT1 = new talon(7);
-		backRightT2 = new talon(9);
-		rearRightT3 = new talon(8);
-		frontLeftT4 = new talon(4);
-		backLeftT5 = new talon(10);
-		rearLeftT6 = new talon(5);
+		frontRightT1 = new Talon(7);
+		backRightT2 = new Talon(9);
+		rearRightT3 = new Talon(8);
+		frontLeftT4 = new Talon(4);
+		backLeftT5 = new Talon(10);
+		rearLeftT6 = new Talon(5);
+		joystick = new Joystick(1);
 
 	}
 
@@ -43,12 +45,13 @@ public class RobotTemplate extends IterativeRobot {
 	 */
 	public void autonomousPeriodic() {
 		while(true(){
-			frontRightT1.set(-0.01);
-			backRightT2.set(0.01);
-			rearRightT3.set(-0.01);
-			frontLeftT4.set(0.01);
-			backLeftT5.set(-0.01);
-			frontLeftT6.set(0.01);
+			frontRightT1.set(-joystick.getRawAxis(4));
+			backRightT2.set(joystick.getRawAxis(4));
+			rearRightT3.set(-joystick.getRawAxis(4));
+			frontLeftT4.set(joystick.getRawAxis(2));
+			backLeftT5.set(-joystick.getRawAxis(2));
+			frontLeftT6.set(joystick.getRawAxis(2));
+		
 			}
 
 		}
