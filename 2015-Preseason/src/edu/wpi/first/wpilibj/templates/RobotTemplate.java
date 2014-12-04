@@ -24,6 +24,7 @@ public class RobotTemplate extends IterativeRobot {
 	private Talon t1l;
 	private Talon t2l;
 	private Talon t3l;
+	private Joystick j1;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -35,18 +36,22 @@ public class RobotTemplate extends IterativeRobot {
 		t1l = new Talon(4);
 		t2l = new Talon(10);
 		t3l = new Talon(5);
+		j1 =new Joystick(1)
     }
 
     /**
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-    	t1r.set(-0.1);
-    	t2r.set(0.1);
-    	t3r.set(-0.1);
-    	t1l.set(0.1);
-    	t2l.set(-0.1);
-    	t3l.set(0.1);
+    	while(true)
+    	{
+    	t1r.set(-j1.getRawAxis(4));
+    	t2r.set(j1.getRawAxis(4));
+    	t3r.set(-j1.getRawAxis(4));
+    	t1l.set(j1.getRawAxis(2));
+    	t2l.set(-j1.getRawAxis(2));
+    	t3l.set(j1.getRawAxis(2));
+    	}
     }
 
     /**
