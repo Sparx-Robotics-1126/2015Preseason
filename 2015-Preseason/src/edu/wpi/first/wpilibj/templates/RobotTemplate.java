@@ -24,7 +24,8 @@ public class RobotTemplate extends IterativeRobot {
 	private Talon frontLeftT4;
 	private Talon backLeftT5;
 	private Talon rightLeftT6;
-	private Joystick joystick
+	private Joystick joystick;
+	private Compressor compress;
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -37,6 +38,7 @@ public class RobotTemplate extends IterativeRobot {
 		backLeftT5 = new Talon(10);
 		rearLeftT6 = new Talon(5);
 		joystick = new Joystick(1);
+		compress = new Compressor(1,14,1,1);
 
 	}
 
@@ -60,12 +62,15 @@ public class RobotTemplate extends IterativeRobot {
 		 * This function is called periodically during operator control
 		 */
 		public void teleopPeriodic() {
+			comress.start();
+		while(true(){
 			frontRightT1.set(joystick.getRawAxis(3));
 			backRightT2.set(-joystick.getRawAxis(3));
 			rearRightT3.set(joystick.getRawAxis(3));
 			frontLeftT4.set(-joystick.getRawAxis(2));
 			backLeftT5.set(joystick.getRawAxis(2));
 			frontLeftT6.set(-joystick.getRawAxis(2));
+			}
 		}
 
 		/**
