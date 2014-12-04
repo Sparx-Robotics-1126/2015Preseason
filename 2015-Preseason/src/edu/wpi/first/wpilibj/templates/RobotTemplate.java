@@ -45,9 +45,9 @@ public class RobotTemplate extends IterativeRobot {
 	 */
 	public void autonomousPeriodic() {
 		while(true(){
-			frontRightT1.set(-joystick.getRawAxis(4));
-			backRightT2.set(joystick.getRawAxis(4));
-			rearRightT3.set(-joystick.getRawAxis(4));
+			frontRightT1.set(-joystick.getRawAxis(3));
+			backRightT2.set(joystick.getRawAxis(3));
+			rearRightT3.set(-joystick.getRawAxis(3));
 			frontLeftT4.set(joystick.getRawAxis(2));
 			backLeftT5.set(-joystick.getRawAxis(2));
 			frontLeftT6.set(joystick.getRawAxis(2));
