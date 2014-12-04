@@ -61,9 +61,19 @@ public class RobotTemplate extends IterativeRobot {
 	 * This function is called periodically during operator control
 	 */
 	public void teleopPeriodic() {
+		boolean value = false;
+		boolean check = false;
 		compress.start();
 		while(true){
-			sol.set(joystick.getRawButton(1));
+			if(joystick.getRawButton(1) == true && check == false){
+				value = !value;
+				sol.set(value);
+                check = true;
+			}
+			else if(check == true && joystick.getRawButton(1) == false)
+			{
+				check = false;
+			}
 			FrightT1.set(joystick.getRawAxis(3));
 			BrightT2.set(-joystick.getRawAxis(3));
 			RrightT3.set(joystick.getRawAxis(3));
