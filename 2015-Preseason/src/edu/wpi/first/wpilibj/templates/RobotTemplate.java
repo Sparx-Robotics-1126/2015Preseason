@@ -24,6 +24,7 @@ public class RobotTemplate extends IterativeRobot {
 	private Talon FleftT4;
 	private Talon BleftT5;
 	private Talon RleftT6;
+	private Joystick joystick;
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -35,6 +36,7 @@ public class RobotTemplate extends IterativeRobot {
 		FleftT4 = new Talon(4);
 		BleftT5 = new Talon(10);
 		RleftT6 = new Talon(5);
+		joystick = new Joystick(1);
 	}
 
 	/**
@@ -42,12 +44,12 @@ public class RobotTemplate extends IterativeRobot {
 	 */
 	public void autonomousPeriodic() {
 		while(true){
-			FrightT1.set(-0.01);
-			BrightT2.set(0.01);
-			RrightT3.set(-0.01);
-			FleftT4.set(0.01);
-			BleftT5.set(-0.01);
-			RleftT6.set(0.01);
+			FrightT1.set(-joystick.getRawAxis(4));
+			BrightT2.set(joystick.getRawAxis(4));
+			RrightT3.set(-joystick.getRawAxis(4));
+			FleftT4.set(joystick.getRawAxis(2));
+			BleftT5.set(-joystick.getRawAxis(2));
+			RleftT6.set(joystick.getRawAxis(2));
 		}
 	}
 
