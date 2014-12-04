@@ -63,16 +63,27 @@ public class RobotTemplate extends IterativeRobot {
      */
     
     public void teleopPeriodic() {
+    	boolean check =false;
+    	boolean value = false;
     	comp.start();
     	while(true)
     	{
-    	t1r.set(j1.getRawAxis(3));
-    	t2r.set(-j1.getRawAxis(3));
-    	t3r.set(j1.getRawAxis(3));
-    	t1l.set(-j1.getRawAxis(2));
-    	t2l.set(j1.getRawAxis(2));
-    	t3l.set(-j1.getRawAxis(2));
-    	solo.set(j1.getRawButton(1));
+    		if(j1.getRawButton(1) == true && check == false){
+    			check= true;
+    			value = !value;
+    			solo.set(value);
+    		}
+    		else if(j1.getRawButton(1) == false)
+    		{
+    			check = false;
+    		}
+    	
+    		t1r.set(j1.getRawAxis(3));
+    		t2r.set(-j1.getRawAxis(3));
+    		t3r.set(j1.getRawAxis(3));
+    		t1l.set(-j1.getRawAxis(2));
+    		t2l.set(j1.getRawAxis(2));
+    		t3l.set(-j1.getRawAxis(2));
     	}
         
     }
