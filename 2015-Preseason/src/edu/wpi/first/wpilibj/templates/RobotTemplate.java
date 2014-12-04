@@ -61,9 +61,9 @@ public class RobotTemplate extends IterativeRobot {
 	 * This function is called periodically during operator control
 	 */
 	public void teleopPeriodic() {
-		compress.start(joystick.getRawButton(1));
+		compress.start();
 		while(true){
-			sol.set()
+			sol.set(joystick.getRawButton(1));
 			FrightT1.set(joystick.getRawAxis(3));
 			BrightT2.set(-joystick.getRawAxis(3));
 			RrightT3.set(joystick.getRawAxis(3));
