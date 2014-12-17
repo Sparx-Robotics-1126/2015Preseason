@@ -8,7 +8,10 @@
 package edu.wpi.first.wpilibj.templates;
 
 
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Talon;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -24,14 +27,17 @@ public class RobotTemplate extends IterativeRobot {
 	private Talon frontLeftT4;
 	private Talon backLeftT5;
 	private Talon rightLeftT6;
+<<<<<<< HEAD
+        private Encoder rightEncoder;
+        private Encoder leftEncoder;
+        private EncoderData rightEncoderData;
+        private EncoderData leftEncoderData;
+	private Joystick joystick
+=======
 	private Joystick joystick;
 	private Compressor compress;
 	private Solenoid sol;
-	private Encoder encoderL
-	private Encoder encoderR
-	private EncoderData encoderdL
-	private EncoderData encoderdR
-	
+>>>>>>> 024ee7d7abceff36f9aab81070914f2dede5c56c
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -43,13 +49,10 @@ public class RobotTemplate extends IterativeRobot {
 		frontLeftT4 = new Talon(4);
 		backLeftT5 = new Talon(10);
 		rearLeftT6 = new Talon(5);
+                
 		joystick = new Joystick(1);
 		compress = new Compressor(1,14,1,1);
 		sol = new Solenoid(1);
-		encoderL = new Encoder(1);
-		encoderR = new Encoder(3);
-		encoderdL = new EncoderData();
-		encoderdR = new EncoderData();
 
 	}
 
