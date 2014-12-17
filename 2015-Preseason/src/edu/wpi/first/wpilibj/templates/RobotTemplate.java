@@ -59,16 +59,26 @@ public class RobotTemplate extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-    	while(true)
+    	t1r.set(.5);
+    	t2r.set(-.5);
+    	t3r.set(.5);
+    	t1l.set(-.5);
+    	t2l.set(.5);
+    	t3l.set(-.5);
+    	while(leftencoderdata.getDistance() < 24 && rightencoderdata.getDistance() < 24))
     	{
-    	t1r.set(-j1.getRawAxis(3));
-    	t2r.set(j1.getRawAxis(3));
-    	t3r.set(-j1.getRawAxis(3));
-    	t1l.set(j1.getRawAxis(2));
-    	t2l.set(-j1.getRawAxis(2));
-    	t3l.set(j1.getRawAxis(2));
+    	rightencoder.calculateSpeed();
+    	leftencoder.calculateSpeed();
+    	
     	}
+    	t1r.set(0);
+    	t2r.set(0);
+    	t3r.set(0);
+    	t1l.set(0);
+    	t2l.set(0);
+    	t3l.set(0);
     }
+   
 
     /**
      * This function is called periodically during operator control
