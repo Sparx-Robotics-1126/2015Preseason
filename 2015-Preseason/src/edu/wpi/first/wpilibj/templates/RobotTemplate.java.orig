@@ -37,7 +37,15 @@ public class RobotTemplate extends IterativeRobot {
 	private Joystick joystick;
 	private Compressor compress;
 	private Solenoid sol;
+<<<<<<< HEAD
+	private Encoder encoderL
+	private Encoder encoderR
+	private EncoderData encoderdL
+	private EncoderData encoderdR
+	
+=======
 >>>>>>> 024ee7d7abceff36f9aab81070914f2dede5c56c
+>>>>>>> 495dc04a70c36fed286800dfe2c3fe02d46ef68a
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -53,6 +61,10 @@ public class RobotTemplate extends IterativeRobot {
 		joystick = new Joystick(1);
 		compress = new Compressor(1,14,1,1);
 		sol = new Solenoid(1);
+		encoderL = new Encoder(1);
+		encoderR = new Encoder(3);
+		encoderdL = new EncoderData();
+		encoderdR = new EncoderData();
 
 	}
 
@@ -68,16 +80,10 @@ public class RobotTemplate extends IterativeRobot {
 		backLeftT5.set(-.5);
 		frontLeftT6.set(.5);
 		
-		while(true(leftencoderdata.getDistance() <24 && rightencoderdata.getDistance () < 24){
-			rightencoder.calcuateSpeed();
-			leftencoder.calculateSpeed();
+		while(true(){
+			if(encoderdL.getDistance);
 			}
-		frontRightT1.set(0);
-		backRightT2.set(0);
-		rearRightT3.set(0);
-		frontLeftT4.set(0);
-		backLeftT5.set(0);
-		frontLeftT6.set(0);
+
 		}
 
 		/**
