@@ -8,7 +8,10 @@
 package edu.wpi.first.wpilibj.templates;
 
 
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Talon;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -24,6 +27,10 @@ public class RobotTemplate extends IterativeRobot {
 	private Talon frontLeftT4;
 	private Talon backLeftT5;
 	private Talon rightLeftT6;
+        private Encoder rightEncoder;
+        private Encoder leftEncoder;
+        private EncoderData rightEncoderData;
+        private EncoderData leftEncoderData;
 	private Joystick joystick
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -36,6 +43,7 @@ public class RobotTemplate extends IterativeRobot {
 		frontLeftT4 = new Talon(4);
 		backLeftT5 = new Talon(10);
 		rearLeftT6 = new Talon(5);
+                
 		joystick = new Joystick(1);
 
 	}
