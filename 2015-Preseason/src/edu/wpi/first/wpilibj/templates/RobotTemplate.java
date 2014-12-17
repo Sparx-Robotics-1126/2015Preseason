@@ -18,15 +18,15 @@ import edu.wpi.first.wpilibj.IterativeRobot;
  * directory.
  */
 public class RobotTemplate extends IterativeRobot {
-	private Talon t1r;
-	private Talon t2r;
-	private Talon t3r;
-	private Talon t1l;
-	private Talon t2l;
-	private Talon t3l;
-	private Joystick j1;
-	private Compressor comp;
-	private Soloenoid solo;
+	private Talon t1r;  //Right Front
+	private Talon t2r;  //Right Bottom
+	private Talon t3r;  //Right Rear
+	private Talon t1l;  //Left Front
+	private Talon t2l;  //Left Bottom
+	private Talon t3l;  //Left Rear
+	private Joystick j1;  //Joystick
+	private Compressor comp;  //Compressor
+	private Soloenoid solo;  //Solenoid
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
