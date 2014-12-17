@@ -8,7 +8,12 @@
 package edu.wpi.first.wpilibj.templates;
 
 
+import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.Talon;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -24,6 +29,10 @@ public class RobotTemplate extends IterativeRobot {
 	private Talon FleftT4;
 	private Talon BleftT5;
 	private Talon RleftT6;
+        private EncoderData rightEncoderData;
+        private EncoderData leftEncoderData;
+        private Encoder rightEncoder;
+        private Encoder leftEncoder;
 	private Joystick joystick;
 	private Compressor compress;
 	private Solenoid sol;
@@ -38,6 +47,10 @@ public class RobotTemplate extends IterativeRobot {
 		FleftT4 = new Talon(4);
 		BleftT5 = new Talon(10);
 		RleftT6 = new Talon(5);
+                rightEncoder = new Encoder(1, 1);
+                leftEncoder = new Encoder(1, 1);
+                rightEncoderData = new Enc();
+                leftEncoderData = new EncoderData();
 		joystick = new Joystick(1);
 		compress = new Compressor(1,14,1,1);
 		sol=new Solenoid(1);  
