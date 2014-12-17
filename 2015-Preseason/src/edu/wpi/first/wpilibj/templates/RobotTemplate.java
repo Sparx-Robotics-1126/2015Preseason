@@ -34,6 +34,7 @@ public class RobotTemplate extends IterativeRobot {
         private EncoderData leftEncoderData;
 	private Joystick j1;
 	private Compressor comp;
+	private Soloenoid solo;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -51,6 +52,7 @@ public class RobotTemplate extends IterativeRobot {
                 leftEncoderData = new EncoderData(leftEncoder, 0.0001);
 		j1 =new Joystick(1);
 		comp =new Compressor(1,14,1,1);
+		solo =new Soloenoid(1);
     }
 
     /**
@@ -73,15 +75,27 @@ public class RobotTemplate extends IterativeRobot {
      */
     
     public void teleopPeriodic() {
+    	boolean check =false;
+    	boolean value = false;
     	comp.start();
     	while(true)
     	{
-    	t1r.set(j1.getRawAxis(3));
-    	t2r.set(-j1.getRawAxis(3));
-    	t3r.set(j1.getRawAxis(3));
-    	t1l.set(-j1.getRawAxis(2));
-    	t2l.set(j1.getRawAxis(2));
-    	t3l.set(-j1.getRawAxis(2));
+    		if(j1.getRawButton(1) == true && check == false){
+    			check= true;
+    			value = !value;
+    			solo.set(value);
+    		}
+    		else if(j1.getRawButton(1) == false)
+    		{
+    			check = false;
+    		}
+    	
+    		t1r.set(j1.getRawAxis(3));
+    		t2r.set(-j1.getRawAxis(3));
+    		t3r.set(j1.getRawAxis(3));
+    		t1l.set(-j1.getRawAxis(2));
+    		t2l.set(j1.getRawAxis(2));
+    		t3l.set(-j1.getRawAxis(2));
     	}
         
     }
