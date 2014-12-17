@@ -29,17 +29,14 @@ public class RobotTemplate extends IterativeRobot {
 	private Talon FleftT4;
 	private Talon BleftT5;
 	private Talon RleftT6;
-        private EncoderData rightEncoderData;
-        private EncoderData leftEncoderData;
-        private Encoder rightEncoder;
-        private Encoder leftEncoder;
+	private EncoderData rightEncoderData;
+	private EncoderData leftEncoderData;
+	private Encoder rightEncoder;
+	private Encoder leftEncoder;
 	private Joystick joystick;
 	private Compressor compress;
 	private Solenoid sol;
-	private Encoder eLeft;
-	private Encoder eRight;
-	private EncoderData edLeft;
-	private EncoderData edRight;
+
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -51,26 +48,22 @@ public class RobotTemplate extends IterativeRobot {
 		FleftT4 = new Talon(4);
 		BleftT5 = new Talon(10);
 		RleftT6 = new Talon(5);
-                rightEncoder = new Encoder(1, 1);
-                leftEncoder = new Encoder(1, 1);
-                rightEncoderData = new Enc();
-                leftEncoderData = new EncoderData();
+		rightEncoder = new Encoder(1, 1);
+		leftEncoder = new Encoder(1, 1);
+		rightEncoderData = new EncoderData();
+		leftEncoderData = new EncoderData();
 		joystick = new Joystick(1);
 		compress = new Compressor(1,14,1,1);
 		sol=new Solenoid(1);
-		Encoder eRight = new Encoder(1);
-		Encoder eLeft = new Encoder(3);
-		EncoderData edRight = new EncoderData();
-		EncoderData edLeft = new EncoderData();
+
 	}
 
 	/**
 	 * This function is called periodically during autonomous
 	 */
 	public void autonomousPeriodic() {
-		while(true){
-			driveStraight();
-		}
+		driveStraight();
+		
 	}
 
 	/**
@@ -107,23 +100,26 @@ public class RobotTemplate extends IterativeRobot {
 
 	}
 	/**
-	 * drives straight x distance
+	 * drives straight 24 inches
 	 */
 	public void driveStraight(){
-		FrightT1.set(.1)
-		BrightT2.set(-.1)
-		RrightT3.set(.1)
-		FleftT4.set(-.1)
-		BleftT5.set(.1)
-		RleftT6.set(-.1)
-		while(edLeft.getDistance() < 24 && edRight.getDistance() < 24){
-			FrightT1.set;
-			BrightT2.set;
-			RrightT3.set;
-			FleftT4.set;
-			BleftT5.set;
-			RleftT6.set;
+		FrightT1.set(.1);
+		BrightT2.set(-.1);
+		RrightT3.set(.1);
+		FleftT4.set(-.1);
+		BleftT5.set(.1);
+		RleftT6.set(-.1);
+		
+		while(leftEncoderData.getDistance() < 24 && rightEncoderData.getDistance() < 24){
+			leftEncoderData.calculate();
+			RightEncoderData.calculate();
 
 		}
+		FrightT1.set(0);
+		BrightT2.set(0);
+		RrightT3.set(0);
+		FleftT4.set(0);
+		BleftT5.set(0);
+		RleftT6.set(0);
 	}
 }
