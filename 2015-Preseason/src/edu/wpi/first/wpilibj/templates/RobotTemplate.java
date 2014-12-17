@@ -27,11 +27,17 @@ public class RobotTemplate extends IterativeRobot {
 	private Talon frontLeftT4;
 	private Talon backLeftT5;
 	private Talon rightLeftT6;
+<<<<<<< HEAD
         private Encoder rightEncoder;
         private Encoder leftEncoder;
         private EncoderData rightEncoderData;
         private EncoderData leftEncoderData;
 	private Joystick joystick
+=======
+	private Joystick joystick;
+	private Compressor compress;
+	private Solenoid sol;
+>>>>>>> 024ee7d7abceff36f9aab81070914f2dede5c56c
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -45,6 +51,8 @@ public class RobotTemplate extends IterativeRobot {
 		rearLeftT6 = new Talon(5);
                 
 		joystick = new Joystick(1);
+		compress = new Compressor(1,14,1,1);
+		sol = new Solenoid(1);
 
 	}
 
@@ -52,14 +60,14 @@ public class RobotTemplate extends IterativeRobot {
 	 * This function is called periodically during autonomous
 	 */
 	public void autonomousPeriodic() {
-		while(true(){
+		/**while(true(){
 			frontRightT1.set(joystick.getRawAxis(3));
 			backRightT2.set(-joystick.getRawAxis(3));
 			rearRightT3.set(joystick.getRawAxis(3));
 			frontLeftT4.set(-joystick.getRawAxis(2));
 			backLeftT5.set(joystick.getRawAxis(2));
 			frontLeftT6.set(-joystick.getRawAxis(2));
-		
+			*/
 			}
 
 		}
@@ -68,12 +76,27 @@ public class RobotTemplate extends IterativeRobot {
 		 * This function is called periodically during operator control
 		 */
 		public void teleopPeriodic() {
+			boolean value = false
+			boolean check = false;
+			comress.start();
+		while(true(){
+			if(joystick.getRawButton(1) == true && check == false){
+				value = !value;
+				sol.set(check);
+				check = true;
+			}
+			else if(check == true && joystick.getRawButton(1) == false)
+			{
+				check = false
+			}
 			frontRightT1.set(joystick.getRawAxis(3));
 			backRightT2.set(-joystick.getRawAxis(3));
 			rearRightT3.set(joystick.getRawAxis(3));
 			frontLeftT4.set(-joystick.getRawAxis(2));
 			backLeftT5.set(joystick.getRawAxis(2));
 			frontLeftT6.set(-joystick.getRawAxis(2));
+			
+			}
 		}
 
 		/**
