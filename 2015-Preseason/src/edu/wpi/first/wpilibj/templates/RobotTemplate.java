@@ -113,6 +113,8 @@ public class RobotTemplate extends IterativeRobot {
 		while(leftEncoderData.getDistance() < 24 && rightEncoderData.getDistance() < 24){
 			leftEncoderData.calculate();
 			RightEncoderData.calculate();
+			System.out.println("left: " + leftEncoderData.getDistance());
+			System.out.println("right: " + rightEncoderData.getDistance());
 
 		}
 		FrightT1.set(0);
