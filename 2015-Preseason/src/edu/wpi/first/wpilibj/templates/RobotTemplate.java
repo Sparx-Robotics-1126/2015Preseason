@@ -27,6 +27,11 @@ public class RobotTemplate extends IterativeRobot {
 	private Joystick joystick;
 	private Compressor compress;
 	private Solenoid sol;
+	private Encoder encoderL
+	private Encoder encoderR
+	private EncoderData encoderdL
+	private EncoderData encoderdR
+	
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -41,6 +46,10 @@ public class RobotTemplate extends IterativeRobot {
 		joystick = new Joystick(1);
 		compress = new Compressor(1,14,1,1);
 		sol = new Solenoid(1);
+		encoderL = new Encoder(1);
+		encoderR = new Encoder(3);
+		encoderdL = new EncoderData();
+		encoderdR = new EncoderData();
 
 	}
 
@@ -48,14 +57,16 @@ public class RobotTemplate extends IterativeRobot {
 	 * This function is called periodically during autonomous
 	 */
 	public void autonomousPeriodic() {
-		/**while(true(){
-			frontRightT1.set(joystick.getRawAxis(3));
-			backRightT2.set(-joystick.getRawAxis(3));
-			rearRightT3.set(joystick.getRawAxis(3));
-			frontLeftT4.set(-joystick.getRawAxis(2));
-			backLeftT5.set(joystick.getRawAxis(2));
-			frontLeftT6.set(-joystick.getRawAxis(2));
-			*/
+		
+		frontRightT1.set(-.5);
+		backRightT2.set(.5);
+		rearRightT3.set(-.5);
+		frontLeftT4.set(.5);
+		backLeftT5.set(-.5);
+		frontLeftT6.set(.5);
+		
+		while(true(){
+			if(encoderdL.getDistance);
 			}
 
 		}
@@ -77,13 +88,12 @@ public class RobotTemplate extends IterativeRobot {
 			{
 				check = false
 			}
-			frontRightT1.set(joystick.getRawAxis(3));
-			backRightT2.set(-joystick.getRawAxis(3));
-			rearRightT3.set(joystick.getRawAxis(3));
-			frontLeftT4.set(-joystick.getRawAxis(2));
-			backLeftT5.set(joystick.getRawAxis(2));
-			frontLeftT6.set(-joystick.getRawAxis(2));
-			
+			frontRightT1.set(-.5);
+			backRightT2.set(.5);
+			rearRightT3.set(-.5);
+			frontLeftT4.set(.5);
+			backLeftT5.set(-.5);
+			frontLeftT6.set(.5);
 			}
 		}
 
